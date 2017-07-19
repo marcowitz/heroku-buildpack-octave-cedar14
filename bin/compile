@@ -49,7 +49,7 @@ export PATH="$BUILD_DIR/.heroku/python/bin:/usr/local/bin:/usr/bin:/bin:$BUILD_D
 export | grep PATH > "$LP_DIR/export"
 
 export PYTHONPATH="$BUILD_DIR/"
-export | grep PYTHONPATH > "$LP_DIR/export"
+export | grep PYTHONPATH >> "$LP_DIR/export"
 
 export LD_LIBRARY_PATH="$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.heroku/python/lib::$BUILD_DIR/.heroku/gcc/lib64:$BUILD_DIR/.heroku/octave/deps/qrupdate/lib"
 export | grep LD_LIBRARY_PATH >> "$LP_DIR/export"
