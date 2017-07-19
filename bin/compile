@@ -51,7 +51,7 @@ export | grep PATH > "$LP_DIR/export"
 export PYTHONPATH="$BUILD_DIR/"
 export | grep PYTHONPATH >> "$LP_DIR/export"
 
-export LD_LIBRARY_PATH="$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.heroku/python/lib::$BUILD_DIR/.heroku/gcc/lib64:$BUILD_DIR/.heroku/octave/deps/qrupdate/lib:$BUILD_DIR/.heroku/octave/lib/octave/3.8.2:$BUILD_DIR/.heroku/octave/deps:$BUILD_DIR/.heroku/octave/deps/hdf5/lib"
+export LD_LIBRARY_PATH="$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.heroku/python/lib::$BUILD_DIR/.heroku/gcc/lib64:$BUILD_DIR/.heroku/octave/deps/qrupdate/lib:$BUILD_DIR/.heroku/octave/lib/octave/3.8.2:$BUILD_DIR/.heroku/octave/deps:$BUILD_DIR/.heroku/octave/deps/hdf5/lib:$BUILD_DIR/.heroku/octave/deps/fftwf/lib:$BUILD_DIR/.heroku/octave/deps/arpack/lib:$BUILD_DIR/.heroku/octave/deps/atlas/lib"
 export | grep LD_LIBRARY_PATH >> "$LP_DIR/export"
 
 # cleanup
