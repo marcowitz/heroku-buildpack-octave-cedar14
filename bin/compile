@@ -45,11 +45,13 @@ echo "-----> exporting path for dynamic usage in other buildpacks"
 
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
-export PATH="$BUILD_DIR/.heroku/octave/bin:$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.heroku/python/lib::$BUILD_DIR/.heroku/gcc/lib64:$BUILD_DIR/.heroku/octave/deps/qrupdate/lib:$PATH"
+export PATH="$BUILD_DIR/.heroku/python/bin:/usr/local/bin:/usr/bin:/bin:$BUILD_DIR/.heroku/octave/bin"
 export | grep PATH > "$LP_DIR/export"
 
-export LD_LIBRARY_PATH="$BUILD_DIR/.heroku/gcc/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="$BUILD_DIR/.heroku/octave/deps/qrupdate/lib:$LD_LIBRARY_PATH"
+export PYTHONPATH="$BUILD_DIR/"
+export | grep PYTHONPATH > "$LP_DIR/export"
+
+export LD_LIBRARY_PATH="$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.heroku/python/lib::$BUILD_DIR/.heroku/gcc/lib64:$BUILD_DIR/.heroku/octave/deps/qrupdate/lib"
 export | grep LD_LIBRARY_PATH >> "$LP_DIR/export"
 
 # cleanup
