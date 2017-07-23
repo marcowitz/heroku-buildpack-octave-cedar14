@@ -55,7 +55,7 @@ export LD_LIBRARY_PATH="$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.heroku/python/
 export | grep LD_LIBRARY_PATH >> "$LP_DIR/export"
 
 # copy all deps, since there some with an absolute path
-cp -rf $BUILD_DIR/.heroku/octave/deps /app/.heroku/octave/deps
+mkdir -p $BUILD_DIR/.heroku/octave/deps /app/.heroku/octave/deps && cp -rf $BUILD_DIR/.heroku/octave/deps /app/.heroku/octave/deps
 
 # cleanup
 rm *.tar.gz
